@@ -1,0 +1,21 @@
+@startuml
+
+interface Studium
+class Studiengang
+class "Studien und Prüfungsordnung"
+class "Grundständiger Studiengang"
+
+enum Abschluss {
+Hochschulabschluss
+Staatsexamen
+kirchlicher Abschluss
+}
+
+"Studien und Prüfungsordnung" "*" --> "1" Studiengang : regelt
+Studiengang "1" --> "1" Abschluss : ausgerichtet auf
+Studiengang --|> Studium
+"Grundständiger Studiengang" --|> Studiengang
+"Grundständiger Studiengang" *-- Abschluss
+
+@enduml
+
